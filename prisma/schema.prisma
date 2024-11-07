@@ -1,14 +1,40 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+model GovData {
+  id                    Int     @id @default(autoincrement())
+  typeId                Int
+  kategoriId            Int?
+  statusId              Int
+  titel                 String
+  titelKort             String
+  offentlighedsKode     String
+  nummer                String
+  nummerPrefix          String
+  nummerNumerisk        String
+  nummerPostfix         String
+  resume                String
+  afstemningsKonklusion String?
+  periodeId             Int
+  afgoerelsesResultatKode String?
+  baggrundsMateriale    String?
+  opdateringsDato       String
+  statsBudgetSag        Boolean
+  begrundelse           String?
+  paragrafNummer        String?
+  paragraf              String?
+  afgoerelsesDato       String?
+  afgoerelse            String?
+  raadsmodeDato         String?
+  lovNummer             String?
+  lovNummerDato         String?
+  retsinformationsUrl   String?
+  fremsatUnderSagId     String?
+  deltUnderSagId        String?
 }

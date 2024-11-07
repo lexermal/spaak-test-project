@@ -1,0 +1,63 @@
+export interface GovData {
+  id: number;
+  typeId: number;
+  kategoriId: number | null;
+  statusId: number;
+  titel: string;
+  titelKort: string;
+  offentlighedsKode: string;
+  nummer: string;
+  nummerPrefix: string;
+  nummerNumerisk: string;
+  nummerPostfix: string;
+  resume: string;
+  afstemningsKonklusion: string | null;
+  periodeId: number;
+  afgoerelsesResultatKode: string | null;
+  baggrundsMateriale: string | null;
+  opdateringsDato: string;
+  statsBudgetSag: boolean;
+  begrundelse: string | null;
+  paragrafNummer: string | null;
+  paragraf: string | null;
+  afgoerelsesDato: string | null;
+  afgoerelse: string | null;
+  raadsmodeDato: string | null;
+  lovNummer: string | null;
+  lovNummerDato: string | null;
+  retsinformationsUrl: string | null;
+  fremsatUnderSagId: string | null;
+  deltUnderSagId: string | null;
+}
+
+export interface GovDataResponse {
+  id: number;
+  typeid: number;
+  kategoriid: number | null;
+  statusid: number;
+  titel: string;
+  titelkort: string;
+  offentlighedskode: string;
+  nummer: string;
+  nummerprefix: string;
+  nummernumerisk: string;
+  nummerpostfix: string;
+  resume: string;
+  afstemningskonklusion: string | null;
+  periodeid: number;
+  afgørelsesresultatkode: string | null;
+  baggrundsmateriale: string | null;
+  opdateringsdato: string;
+  statsbudgetsag: boolean;
+  begrundelse: string | null;
+  paragrafnummer: string | null;
+  paragraf: string | null;
+  afgørelsesdato: string | null;
+  afgørelse: string | null;
+  rådsmødedato: string | null;
+  lovnummer: string | null;
+  lovnummerdato: string | null;
+  retsinformationsurl: string | null;
+  fremsatundersagid: string | null;
+  deltundersagid: string | null;
+}
