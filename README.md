@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spaak Kanban Project
 
-## Getting Started
+This project is an MVP of a Kanban board application built with Next.js, Prisma, and Tailwind CSS. The data is stored in a PostgreSQL database.
 
-First, run the development server:
+## Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **/prisma**: Contains all migrations and type definitions for Prisma ORM.
+- **/app/api**: Contains all API routes for updating and fetching data to display in the frontend.
+- **/app/components**: Contains all reusable components.
+- **/utils**: Contains type definitions and utilities for mapping the data.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Important Note
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+As this is an MVP implementation of a Kanban project, it contains credentials in `.env` and `docker-compose.yml`. For production usage, credentials should be managed securely and not committed to the repository.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Running the Project
 
-## Learn More
+1. Start the Docker containers:
+    ```sh
+    docker compose up -d
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install the dependencies:
+    ```sh
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run the Prisma migrations:
+    ```sh
+    npx prisma migrate dev --name update-govdata-schema
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Start the development server:
+    ```sh
+    npm run dev
+    ```
 
-## Deploy on Vercel
+5. Populate the database with the latest API data by visiting:
+    ```
+    http://localhost:3000/api/update
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6. Browse the Kanban board at:
+    ```
+    http://localhost:3000
+    ```
