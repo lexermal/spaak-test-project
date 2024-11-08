@@ -14,7 +14,7 @@ export default function Home() {
       .then((data) => setEntries(data));
   }, []);
 
-  return <div className="h-screen">
+  return <div className="h-screen bg-gray-900">
     <Kanban
       entries={entries}
       onChange={(id, status) => console.log(`Kanban card ${id}changed to status: ${getStatusName(status)}`)} />
