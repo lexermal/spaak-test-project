@@ -53,7 +53,7 @@ export async function GET() {
     if (e.code === 'P2002') {
       return Response.json({ "status": "The data already exists in the database." })
     }
-    console.log("Data update error: ", { error: JSON.stringify(e) });
+    console.error("Data update error: ", { error: JSON.stringify(e) });
     return Response.json({ "status": "Error updating gov data." })
   }
   return Response.json({ "status": "Successfully updated gov data." })
