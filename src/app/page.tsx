@@ -19,6 +19,6 @@ export default function Home() {
     <Navbar />
     <Kanban
       entries={entries}
-      onChange={(id, status) => console.log(`Kanban card ${id}changed to status: ${getStatusName(status)}`)} />
+      onChange={(id, status) => console.log(`Kanban card ${id} changed to status: ${getStatusName(status)}`)} />
   </div>;
 }

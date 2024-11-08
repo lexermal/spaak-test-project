@@ -4,10 +4,6 @@ export default function Navbar(): JSX.Element {
             <div className="flex items-center">
                 <h1 className="text-white text-2xl ml-2">Spaak</h1>
             </div>
-            <div className="flex items-center">
-                <button className="text-white text-sm mr-4">Sign in</button>
-                <button className="text-white text-sm">Sign up</button>
-            </div>
         </div>
     );
 }
