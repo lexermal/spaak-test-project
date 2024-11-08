@@ -3,6 +3,7 @@
 import Card from './Card';
 import { KanbanEntry } from '@/utils/KanbanEntryMapping';
 import DraggableLayout from 'react-draggable-layout';
+import ColumnHeadings from './Headers';
 
 interface Props {
     entries: KanbanEntry[];
@@ -37,10 +38,14 @@ export default function Kanban({ entries, onChange }: Props) {
     };
 
     return (
-        <DraggableLayout
-            columns={5}
-            draggable={true}
-            components={components}
-            onChange={onEntryStatusChange} />
+        <div>
+            <ColumnHeadings headers={["Todo", "In Progress", "Review", "Done", "Blocked"]} />
+            <DraggableLayout
+                columns={5}
+                draggable={true}
+                mainColumnIndex={7}
+                components={components}
+                onChange={onEntryStatusChange} />
+        </div>
     );
 }

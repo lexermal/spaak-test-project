@@ -27,7 +27,7 @@ function getEntryStatus(id: number): number {
 }
 
 export function getStatusName(id: number): string {
-    const statusNames = ['Backlog', 'In Progress', 'Done', 'Review', 'Blocked'];
+    const statusNames = ['Backlog', 'In Progress', 'Review', 'Done', 'Blocked'];
     return statusNames[id];
 }
 
